@@ -1,0 +1,56 @@
+### findAll
+GET http://localhost:8080/api/products HTTP/1.1
+
+
+### findById
+GET http://localhost:8080/api/products/id/1 HTTP/1.1
+
+
+### filterByNameLike
+GET http://localhost:8080/api/products/name/baby HTTP/1.1
+
+
+### filterByCategory
+GET http://localhost:8080/api/products/category/sweet HTTP/1.1
+
+
+### filterbyRating
+GET http://localhost:8080/api/products/rating/2 HTTP/1.1
+
+
+### create
+POST http://localhost:8080/api/products/ HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 0, 
+    "name": "Http Test Item", 
+    "category": "Generic Food", 
+    "price": 1.99, 
+    "link": "http://www.alinktosomewhere.com",
+    "image": "image", 
+    "tried": false, 
+    "rating": 0, 
+    "review": ""
+}
+
+
+### update
+PUT http://localhost:8080/api/products/25 HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 25, 
+    "name": "Http Test Item", 
+    "category": "Miscellany", 
+    "price": 1.99, 
+    "link": "http://www.alinktosomewhere.com",
+    "image": "image", 
+    "tried": false, 
+    "rating": 0, 
+    "review": ""
+}
+
+
+### delete
+DELETE http://localhost:8080/api/products/25 HTTP/1.1
