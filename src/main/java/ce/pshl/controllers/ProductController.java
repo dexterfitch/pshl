@@ -25,6 +25,8 @@ public class ProductController {
         return service.findAll();
     };
 
+    // My instinct would be to change this path to "/{id}" as that's a very common
+    // path for retrieving a single record, but this is a nitpick.
     @GetMapping("/id/{id}")
     public Product findById(@PathVariable int id) {
         return service.findById(id);
