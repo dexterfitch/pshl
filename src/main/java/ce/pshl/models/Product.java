@@ -18,7 +18,7 @@ public class Product {
         this.id = 0;
         this.name = "";
         this.category = "";
-        this.price = BigDecimal.valueOf(0);
+        this.price = BigDecimal.ZERO;
         this.link = "";
         this.image = "";
         this.tried = false;
