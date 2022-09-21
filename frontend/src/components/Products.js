@@ -9,7 +9,7 @@ function Products({products, setProducts, setCategories}) {
         .then(response => response.json())
         .then(data => productManager(data))
         .catch(error => console.error(error));
-    })
+    }, [])
 
     const productManager = (productData) => {
         setProducts(productData);
