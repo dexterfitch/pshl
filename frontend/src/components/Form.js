@@ -44,7 +44,7 @@ function Form({products, setProducts, categories}) {
         const firstNum = response.status.toString().charAt(0);
         switch(firstNum) {
             case "2": 
-                console.log(`Solar Panel has been updated!`);
+                console.log(`Product has been updated!`);
                 return response.json();
             case "4": 
                 console.error("400 Error: Something went wrong!");
