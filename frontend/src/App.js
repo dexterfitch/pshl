@@ -4,7 +4,7 @@ import Home from "./components/Home";
 import Products from "./components/Products";
 import About from "./components/About";
 import References from "./components/References";
-import AddProduct from "./components/AddProduct";
+import Form from "./components/Form";
 import Footer from "./components/Footer";
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
               <Route path="/products" element={<Products />} />
               <Route path="/about" element={<About />} />
               <Route path="/references" element={<References />} />
-              <Route path="/add" element={<AddProduct />} />
+              <Route path="/add" element={<Form />} />
             </Routes>
           </div>
           <div id="footer">
