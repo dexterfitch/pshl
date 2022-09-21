@@ -7,7 +7,7 @@ CREATE TABLE products (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	`name` VARCHAR(300) NOT NULL,
 	category VARCHAR(20) NOT NULL,
-	price FLOAT(2) NOT NULL,
+	price DECIMAL(5,2) NOT NULL,
 	link VARCHAR(500),
 	image LONGTEXT,
 	tried BOOLEAN,

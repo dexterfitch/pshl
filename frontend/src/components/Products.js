@@ -14,7 +14,7 @@ function Products() {
     const productFactory = () => {
         return products.map(product => {
             return (
-                <div className="col-4" key={product.id + "_product"}>
+                <div className="col-4" key={"product_" + product.id}>
                     <div className="product-container">
                         <Product product={product} />
                     </div>

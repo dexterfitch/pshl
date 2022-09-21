@@ -1,18 +1,4 @@
 function Product({product}) {
-    const moneyFormat = () => {
-        let price = `${product.price}`;
-        let cents = price.split(".")[1];
-
-        if (cents === undefined) {
-            return price + ".00";
-        } 
-        else if (cents.length === 1) {
-            return price + "0";
-        }
-        else {
-            return price;
-        }
-    }
 
     return (
         <>
@@ -25,7 +11,7 @@ function Product({product}) {
                             <p className="card-text"><b>Category:</b> {product.category}</p>
                         </div>
                         <div className="col-4 pt-1">
-                            <p className="card-text"><b>Price:</b> ${moneyFormat()}</p>
+                            <p className="card-text"><b>Price:</b> ${product.price}</p>
                         </div>
                         <div className="col-2 text-end">
                             <a href={product.link} target="_new">
@@ -54,7 +40,7 @@ function Product({product}) {
                                 </div>
                                 <div className="col-5 mt-5">
                                     <p><b>Category:</b> {product.category}</p>
-                                    <p><b>Price:</b> {moneyFormat()}</p>
+                                    <p><b>Price:</b> ${product.price}</p>
                                     <p><b>Rating:</b> {product.rating !== 0 ? product.rating + "/5" : "Unrated"}</p>
                                     <p><b>Tried:</b> {product.tried ? "Yes" : "No"}</p>
                                     <p><b>Review:</b> {product.review.length > 0 ? product.review : "N/A"}</p>
