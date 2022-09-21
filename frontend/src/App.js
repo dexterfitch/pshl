@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
@@ -8,6 +9,9 @@ import Form from "./components/Form";
 import Footer from "./components/Footer";
 
 function App() {
+  const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
+
   return (
     <div className="container-fluid g-0 full-height">
       <div className="row g-0 full-height">
@@ -18,10 +22,10 @@ function App() {
           <div id="content">
             <Routes>
               <Route end path="/" element={<Home />} />
-              <Route path="/products" element={<Products />} />
+              <Route path="/products" element={<Products products={products} setProducts={setProducts} setCategories={setCategories} />} />
               <Route path="/about" element={<About />} />
               <Route path="/references" element={<References />} />
-              <Route path="/add" element={<Form />} />
+              <Route path="/add" element={<Form products={products} setProducts={setProducts} categories={categories} />} />
             </Routes>
           </div>
           <div id="footer">

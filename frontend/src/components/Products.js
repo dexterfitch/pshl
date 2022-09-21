@@ -1,15 +1,22 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Product from "./Product";
 
-function Products() {
-    const [products, setProducts] = useState([]);
+function Products({products, setProducts, setCategories}) {
 
     useEffect(() => {
-        fetch('http://localhost:8080/api/products')
+        fetch("http://localhost:8080/api/products")
         .then(response => response.json())
-        .then(data => setProducts(data));
-    }, [])
+        .then(data => productManager(data))
+        .catch(error => console.error(error));
+    })
+
+    const productManager = (productData) => {
+        setProducts(productData);
+        
+        let categories = productData.map(product => product.category).filter((category, i, ar) => ar.indexOf(category) === i).sort();
+        setCategories(categories);
+    }
 
     const productFactory = () => {
         return products.map(product => {

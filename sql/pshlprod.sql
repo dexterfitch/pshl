@@ -11,6 +11,6 @@ CREATE TABLE products (
 	link VARCHAR(500),
 	image VARCHAR(500),
 	tried BOOLEAN,
-	rating INT,
+	rating INT DEFAULT 0,
 	review TEXT
 );
